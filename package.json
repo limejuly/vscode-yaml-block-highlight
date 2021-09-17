@@ -1,41 +1,43 @@
 {
-  "name": "markdown-fenced-codeblock-example-injection",
-  "displayName": "Markdown fenced code block example injection",
-  "description": "",
+  "name": "vscode-markdown-autohotkey",
+  "displayName": "markdown autohotkey",
+  "description":  "Markdown fenced code block support for autohotkey",
   "version": "0.0.1",
-  "publisher": "bierner",
+  "publisher": "limejuly",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example.git"
+    "url": ""
   },
   "bugs": {
-    "url": "https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example/issues"
+    "url": ""
   },
   "engines": {
     "vscode": "^1.8.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
   "contributes": {
     "languages": [
       {
-        "id": "superjs-injection"
+        "id": "autohotkey-injection"
       }
     ],
     "grammars": [
       {
-        "language": "superjs-injection",
-        "scopeName": "markdown.superjs.codeblock",
+        "language": "autohotkey-injection",
+        "scopeName": "markdown.autohotkey.codeblock",
         "path": "./syntaxes/codeblock.json",
         "injectTo": [
           "text.html.markdown"
         ],
         "embeddedLanguages": {
-          "meta.embedded.block.superjs": "javascript"
+          "meta.embedded.block.autohotkey": "autohotkey"
         }
       }
     ]
   },
-  "dependencies": {  }
+  "extensionDependencies":[
+     "vscode-autohotkey"
+  ]
 }
