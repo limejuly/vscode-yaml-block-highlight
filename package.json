@@ -6,10 +6,7 @@
   "publisher": "limejuly",
   "license": "MIT",
   "repository": {
-    "url": ""
-  },
-  "bugs": {
-    "url": ""
+    "url": "https://github.com/limejuly/vscode-markdown-autohotkey.git"
   },
   "engines": {
     "vscode": "^1.8.0"
