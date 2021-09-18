@@ -2,7 +2,7 @@
   "name": "vscode-markdown-autohotkey",
   "displayName": "markdown autohotkey",
   "description":  "Markdown fenced code block support for autohotkey",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "limejuly",
   "license": "MIT",
   "repository": {
@@ -35,6 +35,6 @@
     ]
   },
   "extensionDependencies":[
-     "vscode-autohotkey"
+     "slevesque.vscode-autohotkey"
   ]
 }
