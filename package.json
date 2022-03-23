@@ -1,12 +1,12 @@
 {
-  "name": "vscode-yaml-block-string-highlight",
-  "displayName": "yaml block string highlight",
+  "name": "vscode-yaml-block-highlight",
+  "displayName": "yaml block highlight",
   "description":  "Make yaml block string perform like code fence in markdown",
   "version": "0.0.1",
   "publisher": "limejuly",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/limejuly/vscode-yaml-block-string-highlight.git"
+    "url": "https://github.com/limejuly/vscode-yaml-block-highlight.git"
   },
   "engines": {
     "vscode": "^1.8.0"
