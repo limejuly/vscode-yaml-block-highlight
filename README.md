@@ -1,4 +1,4 @@
-# Markdown autohotkey
+# Yaml block highlight
 
 Provide syntax highlight for yaml block string in editor, to use it like markdown fenced code.
 
