@@ -1,9 +1,9 @@
 # Markdown autohotkey
 
-A simple extension to enable VSCode's builtin markdown syntax highlighting for autohotkey fenced code blocks.
+Provide syntax highlight for yaml block string in editor, to use it like markdown fenced code.
 
-NOTE: it enables highlighting in editor, not preview.
+Usage: put a comment after `|` to indicate language used. For example `# js`, and the block string will be colored as javascript.
 
-![picture 3](https://cdn.jsdelivr.net/gh/limejuly/images/d35c919edb495c5649d5c009280eb9ffd2b322f589ea04e280e10cdfdb618675.png)  
+Most of the common languages are supported, just like markdown in vscode do.
 
-Thanks to [This template](https://github.com/mjbvz/vscode-fenced-code-block-grammar-injection-example)
+![picture 2](https://cdn.jsdelivr.net/gh/limejuly/images/6de213fc61b5d08b84b162b5ef9d3046bb654716ba8b492a2026714894ab895d.png)

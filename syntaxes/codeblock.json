@@ -1,45 +1,1771 @@
 {
-	"fileTypes": [],
-	"injectionSelector": "L:text.html.markdown",
+	"scopeName": "source.yaml.block.code",
+	"injectionSelector": "L:source.yaml",
 	"patterns": [
 		{
-			"include": "#autohotkey-code-block"
+			"include": "#code_block_css"
+		},
+		{
+			"include": "#code_block_html"
+		},
+		{
+			"include": "#code_block_ini"
+		},
+		{
+			"include": "#code_block_java"
+		},
+		{
+			"include": "#code_block_lua"
+		},
+		{
+			"include": "#code_block_makefile"
+		},
+		{
+			"include": "#code_block_perl"
+		},
+		{
+			"include": "#code_block_r"
+		},
+		{
+			"include": "#code_block_ruby"
+		},
+		{
+			"include": "#code_block_php"
+		},
+		{
+			"include": "#code_block_sql"
+		},
+		{
+			"include": "#code_block_vs_net"
+		},
+		{
+			"include": "#code_block_xml"
+		},
+		{
+			"include": "#code_block_xsl"
+		},
+		{
+			"include": "#code_block_yaml"
+		},
+		{
+			"include": "#code_block_clojure"
+		},
+		{
+			"include": "#code_block_coffee"
+		},
+		{
+			"include": "#code_block_c"
+		},
+		{
+			"include": "#code_block_cpp"
+		},
+		{
+			"include": "#code_block_diff"
+		},
+		{
+			"include": "#code_block_dockerfile"
+		},
+		{
+			"include": "#code_block_go"
+		},
+		{
+			"include": "#code_block_groovy"
+		},
+		{
+			"include": "#code_block_js"
+		},
+		{
+			"include": "#code_block_json"
+		},
+		{
+			"include": "#code_block_less"
+		},
+		{
+			"include": "#code_block_objc"
+		},
+		{
+			"include": "#code_block_swift"
+		},
+		{
+			"include": "#code_block_scss"
+		},
+		{
+			"include": "#code_block_perl6"
+		},
+		{
+			"include": "#code_block_python"
+		},
+		{
+			"include": "#code_block_rust"
+		},
+		{
+			"include": "#code_block_scala"
+		},
+		{
+			"include": "#code_block_shell"
+		},
+		{
+			"include": "#code_block_ts"
+		},
+		{
+			"include": "#code_block_tsx"
+		},
+		{
+			"include": "#code_block_csharp"
+		},
+		{
+			"include": "#code_block_fsharp"
+		},
+		{
+			"include": "#code_block_dart"
+		},
+		{
+			"include": "#code_block_markdown"
+		},
+		{
+			"include": "#code_block_log"
+		},
+		{
+			"include": "#code_block_erlang"
+		},
+		{
+			"include": "#code_block_latex"
+		},
+		{
+			"include": "#code_block_bibtex"
 		}
 	],
 	"repository": {
-		"autohotkey-code-block": {
-			"begin": "(^|\\G)(\\s*)(\\`{3,}|~{3,})\\s*(?i:(autohotkey)(\\s+[^`~]*)?$)",
-			"name": "markup.fenced_code.block.markdown",
-			"end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*$",
+		"code_block_shell": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(shell|sh|bash|zsh|bashrc|bash_profile|bash_login|profile|bash_logout))\\s*\\n+)",
 			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
 				"3": {
-					"name": "punctuation.definition.markdown"
+					"name": "constant.numeric.indentation-indicator.yaml"
 				},
 				"4": {
-					"name": "fenced_code.block.language.markdown"
+					"name": "storage.modifier.chomping-indicator.yaml"
 				},
 				"5": {
-					"name": "fenced_code.block.language.attributes.markdown"
-				}
-			},
-			"endCaptures": {
-				"3": {
-					"name": "punctuation.definition.markdown"
-				}
-			},
-			"patterns": [
-				{
-					"begin": "(^|\\G)(\\s*)(.*)",
-					"while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
-					"contentName": "meta.embedded.block.autohotkey",
 					"patterns": [
 						{
-							"include": "source.ahk"
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.shell",
+					"patterns": [
+						{
+							"include": "source.shell"
 						}
 					]
 				}
 			]
 		}
-	},
-	"scopeName": "markdown.autohotkey.codeblock"
+		,"code_block_java": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(java))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.java",
+					"patterns": [
+						{
+							"include": "source.java"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_css": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(css))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.css",
+					"patterns": [
+						{
+							"include": "source.css"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_html": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(html|htm|shtml|xhtml|inc|tmpl))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.html",
+					"patterns": [
+						{
+							"include": "text.html.basic"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_ini": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(ini|conf))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.ini",
+					"patterns": [
+						{
+							"include": "source.ini"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_lua": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(lua))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.lua",
+					"patterns": [
+						{
+							"include": "source.lua"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_makefile": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(Makefile|makefile|GNUmakefile|OCamlMakefile))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.makefile",
+					"patterns": [
+						{
+							"include": "source.makefile"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_perl": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(perl|pl|pm|pod|t|PL|psgi|vcl))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.perl",
+					"patterns": [
+						{
+							"include": "source.perl"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_r": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(r|s|Rprofile))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.r",
+					"patterns": [
+						{
+							"include": "source.r"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_ruby": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(ruby|rb|rbx|rjs|Rakefile|rake|cgi|fcgi|gemspec|irbrc|Capfile|ru|prawn|Cheffile|Gemfile|Guardfile|Hobofile|Vagrantfile|Appraisals|Rantfile|Berksfile|Berksfile.lock|Thorfile|Puppetfile))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.ruby",
+					"patterns": [
+						{
+							"include": "source.ruby"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_php": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(php|php3|php4|php5|phpt|phtml|aw|ctp))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.php",
+					"patterns": [
+						{
+							"include": "source.php"
+						},
+						{
+							"include": "text.html.basic"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_sql": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(sql|ddl|dml))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.sql",
+					"patterns": [
+						{
+							"include": "source.sql"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_vs_net": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(vb))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.vs_net",
+					"patterns": [
+						{
+							"include": "source.asp.vb.net"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_xml": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(xml|xsd|tld|jsp|pt|cpt|dtml|rss|opml))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.xml",
+					"patterns": [
+						{
+							"include": "text.xml"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_xsl": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(xsl|xslt))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.xsl",
+					"patterns": [
+						{
+							"include": "text.xml.xsl"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_yaml": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(yaml|yml))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.yaml",
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_clojure": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(clojure))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.clojure",
+					"patterns": [
+						{
+							"include": "source.clojure"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_coffee": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(coffee|Cakefile|coffee.erb))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.coffee",
+					"patterns": [
+						{
+							"include": "source.coffee"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_c": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(c|h))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.c",
+					"patterns": [
+						{
+							"include": "source.c"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_cpp": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(cpp|c\\+\\+|cxx))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.cpp",
+					"patterns": [
+						{
+							"include": "source.cpp"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_diff": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(patch|diff|rej))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.diff",
+					"patterns": [
+						{
+							"include": "source.diff"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_dockerfile": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(dockerfile))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.dockerfile",
+					"patterns": [
+						{
+							"include": "source.dockerfile"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_go": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(go|golang))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.go",
+					"patterns": [
+						{
+							"include": "source.go"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_groovy": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(groovy|gvy))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.groovy",
+					"patterns": [
+						{
+							"include": "source.groovy"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_js": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(js|jsx|javascript|es6|mjs|cjs))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.js",
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_json": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(json))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.json",
+					"patterns": [
+						{
+							"include": "source.json"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_less": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(less))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.less",
+					"patterns": [
+						{
+							"include": "source.css.less"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_scss": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(scss))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.scss",
+					"patterns": [
+						{
+							"include": "source.css.scss"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_objc": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(objectivec|objective-c|mm|objc|obj-c|m|h))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.objc",
+					"patterns": [
+						{
+							"include": "source.objc"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_swift": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(swift))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.swift",
+					"patterns": [
+						{
+							"include": "source.swift"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_perl6": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(perl6|p6|pl6|pm6|nqp))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.perl6",
+					"patterns": [
+						{
+							"include": "source.perl.6"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_python": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(python|py|py3|rpy|pyw|cpy|SConstruct|Sconstruct|sconstruct|SConscript|gyp|gypi))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.python",
+					"patterns": [
+						{
+							"include": "source.python"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_rust": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(rust|rs))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.rust",
+					"patterns": [
+						{
+							"include": "source.rust"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_scala": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(scala|sbt))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.scala",
+					"patterns": [
+						{
+							"include": "source.scala"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_ts": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(typescript|ts))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.ts",
+					"patterns": [
+						{
+							"include": "source.ts"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_tsx": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(tsx))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.tsx",
+					"patterns": [
+						{
+							"include": "source.tsx"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_csharp": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(cs|csharp|c#))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.csharp",
+					"patterns": [
+						{
+							"include": "source.cs"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_fsharp": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(fs|fsharp|f#))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.fsharp",
+					"patterns": [
+						{
+							"include": "source.fsharp"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_dart": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(dart))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.dart",
+					"patterns": [
+						{
+							"include": "source.dart"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_markdown": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(markdown|md))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.markdown",
+					"patterns": [
+						{
+							"include": "text.html.markdown"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_log": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(log))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.log",
+					"patterns": [
+						{
+							"include": "text.log"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_erlang": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(erlang))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.erlang",
+					"patterns": [
+						{
+							"include": "source.erlang"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_latex": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(latex|tex))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.latex",
+					"patterns": [
+						{
+							"include": "text.tex.latex"
+						}
+					]
+				}
+			]
+		}
+		,"code_block_bibtex": {
+			"begin": "(?:(\\|)|(>))([1-9])?([-+])?(\\s*# (?i:(bibtex))\\s*\\n+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"begin": "^([ ]+)(?! )",
+					"end": "^(?!\\1|\\s*$)",
+					"name": "meta.embedded.block.bibtex",
+					"patterns": [
+						{
+							"include": "text.bibtex"
+						}
+					]
+				}
+			]
+		}
+	}
 }
